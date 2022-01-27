@@ -53,7 +53,9 @@ def authjwt_exception_handler(request: Request, exc: AuthJWTException):
 
 @app.exception_handler(StarletteHTTPException)
 async def custom_http_exception_handler(request, exc):
-    return HTMLResponse(open("build/index.html", "rb").read())
+    if exc.status_code == 404:
+        return HTMLResponse(open("build/index.html", "rb").read())
+    return JSONResponse(status_code=exc.status_code, content={"detail": exc.detail})
 
 
 @app.route("/v4")
