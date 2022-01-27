@@ -38,7 +38,7 @@ async def add_client(client: client, Authorize: AuthJWT = Depends()):
         {"username": client.username, "password": client.password}
     ).items
     if len(user) == 0:
-        raise HTTPException(status_code=404, detail="User not found")
+        raise HTTPException(status_code=401, detail="User not found")
     access_token = Authorize.create_access_token(subject=client.username,expires_time=False)
     return JSONResponse(
         {
@@ -54,6 +54,6 @@ async def get_client(password: password,Authorize: AuthJWT = Depends()):
     Authorize.jwt_required()
     data = auth_db.fetch({"password": password.old_password}).items
     if len(data) == 0:
-        raise HTTPException(status_code=404, detail="Incorrect old password")
+        raise HTTPException(status_code=401, detail="Incorrect old password")
     auth_db.update(key=data[0]["key"], updates={"password": password.new_password})
     return JSONResponse({"success": True, "message": "password changed successfully"})
