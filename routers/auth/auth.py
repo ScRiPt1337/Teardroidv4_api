@@ -1,8 +1,8 @@
 from datetime import datetime
-from fastapi import APIRouter, HTTPException, Depends
+from fastapi import APIRouter, Depends
 from pydantic import BaseModel
 from fastapi.responses import JSONResponse
-from fastapi.encoders import jsonable_encoder
+from fastapi.exceptions import HTTPException
 from fastapi_jwt_auth import AuthJWT
 from db.database import auth_db
 
