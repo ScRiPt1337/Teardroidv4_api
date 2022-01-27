@@ -39,7 +39,7 @@ async def add_client(client: client, Authorize: AuthJWT = Depends()):
         {"username": client.username, "password": client.password}
     ).items
     if len(user) == 0:
-        raise HTTPException(status_code=404, detail="User not found")
+        return HTTPException(status_code=404, detail="User not found")
     access_token = Authorize.create_access_token(subject=client.username,expires_time=False)
     return JSONResponse(
         {
