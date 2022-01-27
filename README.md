@@ -1,7 +1,9 @@
 # Teardroidv4_api
 Teardroid v4 Botnet API
 
-This api is for teardroid bot 
+This api is for teardroid v4 botnet
+
+Please visit https://github.com/ScRiPt1337/Teardroid-phprat to know about teardroid and how to use it
 
 You can host it on deta.sh
 
