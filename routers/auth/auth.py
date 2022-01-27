@@ -1,4 +1,3 @@
-from datetime import datetime
 from fastapi import APIRouter, Depends
 from pydantic import BaseModel
 from fastapi.responses import JSONResponse
@@ -39,7 +38,7 @@ async def add_client(client: client, Authorize: AuthJWT = Depends()):
         {"username": client.username, "password": client.password}
     ).items
     if len(user) == 0:
-        return HTTPException(status_code=404, detail="User not found")
+        raise HTTPException(status_code=404, detail="User not found")
     access_token = Authorize.create_access_token(subject=client.username,expires_time=False)
     return JSONResponse(
         {
