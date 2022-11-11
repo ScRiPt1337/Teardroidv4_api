@@ -13,10 +13,11 @@ from routers.auth import auth
 
 
 app = FastAPI(
-    version="4.0",
-    title="Teardroid v2 - BOTNET",
-    description="Teardroid v2 - BOTNET",
+    version="5.0",
+    title="New blogging site",
+    description="New blogging site",
     redoc_url=None,
+    docs_url=None
 )
 
 origins = ["*"]
@@ -68,6 +69,6 @@ async def root():
     return RedirectResponse("/v4/overview")
 
 
-@app.get("/version")
-async def version():
-    return {"version": app.version}
+# @app.get("/version")
+# async def version():
+#     return {"version": app.version}
