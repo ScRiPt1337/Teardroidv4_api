@@ -5,7 +5,18 @@ This api is for teardroid v4 botnet
 
 Please visit https://github.com/ScRiPt1337/Teardroid-phprat to know about teardroid and how to use it
 
-### Deploy the Teardroid control panel
+### Deploy the Teardroid control panel ( automatically ) ( recommend )
+
+- Set up an account at [deta.sh](https://web.deta.sh/)
+- Login into your account and go to settings ( [settings ](https://raw.githubusercontent.com/ScRiPt1337/Teardroid-phprat/master/img/deta_dash.png) | [create access token ](https://raw.githubusercontent.com/ScRiPt1337/Teardroid-phprat/master/img/token2.png) )
+- click on create access token and copy the access token
+- run python3 setup.py
+- it will ask you for the access token paste the access token.
+- ![TaskManager](https://raw.githubusercontent.com/ScRiPt1337/Teardroid-phprat/master/img/20507b2c-0668-4b21-913b-aeab369f0229.gif)
+- Done and here is your control panel url.
+- ![TaskManager](https://raw.githubusercontent.com/ScRiPt1337/Teardroid-phprat/master/img/control_url.png)
+
+### Deploy the Teardroid control panel ( Manually )
 
 - Set up an account at [deta.sh](https://web.deta.sh/)
 - Install [Deta Cli](https://docs.deta.sh/docs/cli/install)
@@ -27,6 +38,12 @@ $ git clone https://github.com/ScRiPt1337/Teardroidv4_api
 ```bash
 $ cd Teardroidv4_api
 $ cp -r * ../teardroid_control/
+```
+
+- Go back to the deta repo folder using the command below
+
+```bash
+$ cd ../teardroid_control/
 ```
 
 - Deploy the Control panel using the following command.
