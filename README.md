@@ -62,6 +62,18 @@ $ cd Teardroidv4_api
 $ pip install -r requirements.txt
 ```
 
+- Change project key to connect with database
+- Set up an account at [deta.sh](https://web.deta.sh/) and go to project keys and create a new key and copy it
+```bash
+$ nano ./db/database.py
+from deta import Deta
+from os import getenv
+
+deta = Deta(getenv("DETA_PROJECT_KEY")) => deta =  Deta("demo project key")
+# replace getenv("DETA_PROJECT_KEY") with your deta.sh project key
+# make sure your remove getenv
+```
+
 - Run teardroid api
 
 ```bash
