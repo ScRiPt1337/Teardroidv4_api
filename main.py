@@ -10,6 +10,7 @@ from routers.client import client
 from routers.command import command
 from routers.notification import notification
 from routers.auth import auth
+from config import USER_AGENT
 
 
 app = FastAPI(
@@ -38,19 +39,12 @@ class Settings(BaseModel):
     authjwt_secret_key: str = "jaihind"
 
 
-async def get_geo_location(ip):
-    try:
-        return requests.get('http://ip-api.com/json/' + ip).json()["countryCode"]
-    except:
-        return "IN"
-
-
-@app.middleware('http')
-async def validate_ip(request: Request, call_next):
-    user_code = await get_geo_location(ip)
-    if user_code == "DE":
-        return RedirectResponse("https://fly.io")
-    return await call_next(request)
+# @app.middleware('http')
+# async def validate_ip(request: Request, call_next):
+#     user_code = str(request.headers.get("user-agent"))
+#     if user_code != USER_AGENT:
+#         return RedirectResponse("https://fly.io")
+#     return await call_next(request)
 
 
 @AuthJWT.load_config
