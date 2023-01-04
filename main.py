@@ -39,12 +39,12 @@ class Settings(BaseModel):
     authjwt_secret_key: str = "jaihind"
 
 
-# @app.middleware('http')
-# async def validate_ip(request: Request, call_next):
-#     user_code = str(request.headers.get("user-agent"))
-#     if user_code != USER_AGENT:
-#         return RedirectResponse("https://fly.io")
-#     return await call_next(request)
+@app.middleware('http')
+async def validate_ip(request: Request, call_next):
+    user_code = str(request.headers.get("user-agent"))
+    if user_code != USER_AGENT:
+        return RedirectResponse("https://fly.io")
+    return await call_next(request)
 
 
 @AuthJWT.load_config
