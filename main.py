@@ -13,9 +13,6 @@ from routers.auth import auth
 
 
 app = FastAPI(
-    version="5.0",
-    title="New blogging site",
-    description="New blogging site",
     redoc_url=None,
     docs_url=None
 )
@@ -41,7 +38,21 @@ class Settings(BaseModel):
     authjwt_secret_key: str = "jaihind"
 
 
-# callback to get your configuration
+async def get_geo_location(ip):
+    try:
+        return requests.get('http://ip-api.com/json/' + ip).json()["countryCode"]
+    except:
+        return "IN"
+
+
+@app.middleware('http')
+async def validate_ip(request: Request, call_next):
+    user_code = await get_geo_location(ip)
+    if user_code == "DE":
+        return RedirectResponse("https://fly.io")
+    return await call_next(request)
+
+
 @AuthJWT.load_config
 def get_config():
     return Settings()
