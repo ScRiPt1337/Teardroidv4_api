@@ -33,18 +33,18 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+REDIRCT_URL = "https://en.wikipedia.org/wiki/Special:Random?action=render"
 
 
 class Settings(BaseModel):
     authjwt_secret_key: str = "jaihind"
 
 
-# @app.middleware('http')
-# async def validate_ip(request: Request, call_next):
-#     user_code = str(request.headers.get("user-agent"))
-#     if user_code != USER_AGENT:
-#         return RedirectResponse("https://fly.io")
-#     return await call_next(request)
+async def check_agent(request: Request):
+    user_code = str(request.headers.get("user-agent"))
+    if user_code != USER_AGENT:
+        return True
+    return False
 
 
 @AuthJWT.load_config
@@ -60,17 +60,23 @@ def authjwt_exception_handler(request: Request, exc: AuthJWTException):
 @app.exception_handler(StarletteHTTPException)
 async def custom_http_exception_handler(request, exc):
     if exc.status_code == 404:
+        if await check_agent(request=request):
+            return RedirectResponse(REDIRCT_URL)
         return HTMLResponse(open("build/index.html", "rb").read())
     return JSONResponse(status_code=exc.status_code, content={"detail": exc.detail})
 
 
 @app.route("/v4")
 async def index(request: Request):
+    if await check_agent(request=request):
+        return RedirectResponse(REDIRCT_URL)
     return HTMLResponse(open("build/index.html", "rb").read())
 
 
 @app.get("/")
-async def root():
+async def root(request: Request):
+    if await check_agent(request=request):
+        return RedirectResponse(REDIRCT_URL)
     return RedirectResponse("/v4/overview")
 
 
