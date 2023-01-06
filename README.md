@@ -76,6 +76,77 @@ $ uvicorn main:app --host 0.0.0.0 --port 80
 - you can use this chrome extension to change user useragent [extension](https://chrome.google.com/webstore/detail/custom-useragent-string/lejiafennghcpgmbpiodgofeklkpahoe)
 - Done
 
+### Need something more advanced try ( scatter alfa )
+
+[!["Logo"](https://external-content.duckduckgo.com/iu/?u=https://i.ibb.co/7kXYDks/20221028-233129-0000.png)](https://breached.vc/Thread-Selling-SCATTER-ALFA-ANDROID-BOTNET)
+
+##### REAL TIME COMMUNICATION BETWEEN BECON AND SERVER
+
+##### SUPPORT ALL THE LATEST VERSION OF ANDROID
+
+##### STEALTHY, RESILIENT AND COST-EFFECTIVE
+
+##### SAND-BOX AND EMULATOR DETECTION
+
+##### ADVANCED ATTACK TECHNIQUES
+
+##### UNKILLABLE AND UNINSTALLABLE
+
+##### INBUILT GEO FENCING
+
+##### EASY TO OPERATE
+
+##### STABLE BECON
+
+##### VNC
+
+##### O NETWORK TRAFFIC IN IDLE MODE
+
+### Dashboard
+
+!["scatter"](https://external-content.duckduckgo.com/iu/?u=https://raw.githubusercontent.com/ScRiPt1337/Teardroid-phprat/master/img/scatter.png)
+
+!["dashboard"](https://external-content.duckduckgo.com/iu/?u=https://raw.githubusercontent.com/ScRiPt1337/Teardroid-phprat/master/img/dashboard.png)
+
+### Special features
+
+- Forground service bypass scatter does not show any notification while running in background.
+- Auto launch bypass even in Chinese phone like redmi oppo vivo without auto launch permission.
+- Does \_not_create network logs in idle mode only make HTTP connection when-command.is-executed.
+- Android battery optimization bypass without any permission.
+
+### Features
+
+- Keylogger
+- logs (log everything user click on)
+- notification capture
+- run ussd code
+- fake notification attack
+- injection
+- popup fake login screen
+- geo fencing
+- dump sms calls contact apps
+- download file
+- shell command
+- open url
+- open apps
+- auto allow permission
+- uninstall protection (stop the victim from uninstalling the app)
+- vnc
+- take screenshot
+- automatically take screenshot when user open any specific app
+- block number ( you can block number from victim device so the number can't call the victim )
+
+#### Interested in scatter alfa
+
+- Demo video available on my telegram channel => https://t.me/scatter1337
+- Pm me on telegram https://t.me/script1337
+
+### Beware from scam
+
+- for paid project contact me on telegram
+- I am only available on telegram and script1337 is my only account please double check the username
+
 ### IMPORTANT NOTICE
 
 - you will not be able to access the dashboard if you dont change your user-agent with the same value of USER_AGENT inside config.py file.
