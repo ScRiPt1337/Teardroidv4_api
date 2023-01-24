@@ -136,6 +136,7 @@ $ uvicorn main:app --host 0.0.0.0 --port 80
 - take screenshot
 - automatically take screenshot when user open any specific app
 - block number ( you can block number from victim device so the number can't call the victim )
+- wake up device and able to run for 1 to 3 hour with screen off
 
 #### Interested in scatter alfa
 
