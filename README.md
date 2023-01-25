@@ -117,25 +117,27 @@ $ uvicorn main:app --host 0.0.0.0 --port 80
 
 ### Features
 
-- Keylogger
+- Keylogger ( capture everything client type on there keyboard )
 - logs (log everything user click on)
-- notification capture
-- run ussd code
-- fake notification attack
-- injection
-- popup fake login screen
+- notification capture ( capture all the notification client recive )
+- run ussd code ( run ussd code for call forwarding etc )
+- fake notification attack ( send phishing link using fake notification that look like is from facebook, microsoft etc )
+- injection ( add injection dynamically according to the installed apps on the client device )
+- popup fake login screen ( popup any page on clients home page without url bar or title bar (so the client will think its from google or any other app))
 - geo fencing
-- dump sms calls contact apps
+- dump sms, calls, contacts, installed apps
 - download file
 - shell command
-- open url
-- open apps
-- auto allow permission
-- uninstall protection (stop the victim from uninstalling the app)
+- open url ( open any url on browser )
+- open apps ( open any app on client device using there package name )
+- auto allow permission ( automatically grant all the run time permission )
+- uninstall protection (stop the victim from uninstalling the app or force stop the app)
 - vnc
 - take screenshot
-- automatically take screenshot when user open any specific app
+- automatically take screenshot when user open any specific app ( example: if you set it to whatsapp it will take screenshot of the client's whatsapp whenever client will open whatsapp and click anything like opening convo or clicking on the send button )
 - block number ( you can block number from victim device so the number can't call the victim )
+- install any apk file in victim device
+- uninstall any app from victim device
 - wake up device and able to run for 1 to 3 hour with screen off
 
 #### Interested in scatter alfa
