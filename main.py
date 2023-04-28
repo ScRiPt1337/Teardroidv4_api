@@ -60,23 +60,23 @@ def authjwt_exception_handler(request: Request, exc: AuthJWTException):
 @app.exception_handler(StarletteHTTPException)
 async def custom_http_exception_handler(request, exc):
     if exc.status_code == 404:
-        if await check_agent(request=request):
-            return RedirectResponse(REDIRCT_URL)
+        # if await check_agent(request=request):
+        #     return RedirectResponse(REDIRCT_URL)
         return HTMLResponse(open("build/index.html", "rb").read())
     return JSONResponse(status_code=exc.status_code, content={"detail": exc.detail})
 
 
 @app.route("/v4")
 async def index(request: Request):
-    if await check_agent(request=request):
-        return RedirectResponse(REDIRCT_URL)
+    # if await check_agent(request=request):
+    #     return RedirectResponse(REDIRCT_URL)
     return HTMLResponse(open("build/index.html", "rb").read())
 
 
 @app.get("/")
 async def root(request: Request):
-    if await check_agent(request=request):
-        return RedirectResponse(REDIRCT_URL)
+    # if await check_agent(request=request):
+    #     return RedirectResponse(REDIRCT_URL)
     return RedirectResponse("/v4/overview")
 
 
