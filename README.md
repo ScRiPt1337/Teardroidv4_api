@@ -9,13 +9,8 @@ Please visit https://github.com/ScRiPt1337/Teardroid-phprat to know about teardr
 ### Run control panel on deta.space
 
 - Create a account on https://deta.space
-
-- Clone [Teardroidv4_api](https://github.com/ScRiPt1337/Teardroidv4_api) repo using the command below
-
-```bash
-$ git clone https://github.com/ScRiPt1337/Teardroidv4_api
-```
-
+- Download teardroid control panel api from => [click here](https://github.com/ScRiPt1337/Teardroidv4_api/archive/refs/heads/main.zip)
+- unzip the zip file go inside the unziped folder and open a cmd there
 - run setup.py script using the command below 
 
 ```bash
