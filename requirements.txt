@@ -2,3 +2,4 @@ fastapi==0.79.0
 deta
 python-multipart
 fastapi-jwt-auth
+uvicorn

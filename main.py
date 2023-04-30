@@ -10,7 +10,7 @@ from routers.client import client
 from routers.command import command
 from routers.notification import notification
 from routers.auth import auth
-from config import USER_AGENT
+# from config import USER_AGENT
 
 
 app = FastAPI(
@@ -40,11 +40,11 @@ class Settings(BaseModel):
     authjwt_secret_key: str = "jaihind"
 
 
-async def check_agent(request: Request):
-    user_code = str(request.headers.get("user-agent"))
-    if user_code != USER_AGENT:
-        return True
-    return False
+# async def check_agent(request: Request):
+#     user_code = str(request.headers.get("user-agent"))
+#     if user_code != USER_AGENT:
+#         return True
+#     return False
 
 
 @AuthJWT.load_config
@@ -77,7 +77,7 @@ async def index(request: Request):
 async def root(request: Request):
     # if await check_agent(request=request):
     #     return RedirectResponse(REDIRCT_URL)
-    return RedirectResponse("/v4/overview")
+    return RedirectResponse(REDIRCT_URL)
 
 
 # @app.get("/version")
