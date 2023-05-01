@@ -23,7 +23,7 @@ def main():
         print("it will generate a new token and copy the token paste it below")
         os.system(space + " login")
         os.system(space + " new -n " + generate_random_string(10))
-        os.system("space push")
+        os.system(space + " push")
     else:
         print("space is not installed")
         print("installing space cli....")
