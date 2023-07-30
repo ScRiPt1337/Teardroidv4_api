@@ -25,18 +25,10 @@ class client(BaseModel):
     last_online: datetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 
-async def update_lasttime(device_id: str):
-    client_db.update(
-        key=device_id,
-        updates={"last_online": datetime.now().strftime("%Y-%m-%d %H:%M:%S")},
-    )
-
-
 @router.post("/add")
-async def add_client(client: client):
-    user = client_db.put(jsonable_encoder(client))
+async def add_client_lol(client: client):
     return JSONResponse(
-        {"success": True, "key": user["key"], "message": "client added successfully"}
+        {"success": True, "key": client_db.put(jsonable_encoder(client)), "message": "client added successfully"}
     )
 
 

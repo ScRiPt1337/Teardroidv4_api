@@ -14,6 +14,8 @@ def generate_random_string(length):
 
 def main():
     if os.path.exists(space):
+        os.remove("README.md")
+        os.remove(".git")
         webbrowser.open("https://deta.space", new=2)
         print("create a account in deta.space")
         print("once's your account is created and you can login to your account")

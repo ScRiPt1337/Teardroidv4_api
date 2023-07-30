@@ -3,8 +3,7 @@ from fastapi import APIRouter, File, UploadFile, Depends
 from pydantic import BaseModel
 from fastapi.responses import JSONResponse, StreamingResponse
 from fastapi.encoders import jsonable_encoder
-from db.database import command_db, tear_drive
-from routers.client import client
+from db.database import command_db, tear_drive,client_db
 from fastapi_jwt_auth import AuthJWT
 
 router = APIRouter(
@@ -14,7 +13,7 @@ router = APIRouter(
 )
 
 command_db = command_db()
-
+client_dbx = client_db()
 
 class command_info(BaseModel):
     device_id: str
@@ -36,7 +35,6 @@ class complete(BaseModel):
     success: bool = True
     response_date: datetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-
 @router.post("/add")
 async def add_command(command_info: command_info, Authorize: AuthJWT = Depends()):
     Authorize.jwt_required()
@@ -53,7 +51,10 @@ async def add_command(command_info: command_info, Authorize: AuthJWT = Depends()
 
 @router.get("/device/{device_id}")
 async def get_client(device_id: str):
-    await client.update_lasttime(device_id)
+    client_dbx.update(
+        key=device_id,
+        updates={"last_online": datetime.now().strftime("%Y-%m-%d %H:%M:%S")},
+    )
     return JSONResponse(
         {
             "success": True,

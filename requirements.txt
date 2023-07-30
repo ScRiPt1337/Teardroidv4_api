@@ -3,3 +3,4 @@ deta
 python-multipart
 fastapi-jwt-auth
 uvicorn
+requests
